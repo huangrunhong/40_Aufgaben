@@ -27,7 +27,7 @@ responsive design
 
 ## Screenshots
 
-![screenshort]()
+![screenshort](https://github.com/huangrunhong/40_Aufgaben/blob/main/assets/images/screenshort_SuperFakeStore.png)
 
 ## Author
 
