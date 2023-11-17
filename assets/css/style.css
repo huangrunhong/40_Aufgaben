@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 4vh auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: beige;
+}
+h1 {
+  font-size: 3rem;
+  color: yellowgreen;
+  margin-bottom: 2rem;
+}
+form {
+  background-color: yellowgreen;
+  padding: 3rem 0;
+}
+form input,
+select,
+label,
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+}
+input,
+select {
+  border: none;
+}
+form div {
+  margin-top: 2rem;
+}
+label {
+  color: white;
+}
+button {
+  border: 1px solid white;
+  background-color: yellowgreen;
+  color: white;
+}
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 3rem 4rem;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 4rem 3rem;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+img {
+  width: 100%;
+  object-fit: contain;
+  height: 16rem;
+}
+h2 {
+  text-align: left;
+  align-self: flex-start;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+.priceCart {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid beige;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  color: rgb(235, 138, 11);
+}
