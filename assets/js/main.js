@@ -4,19 +4,20 @@ fetch("https://fakestoreapi.com/products")
   .then((response) => response.json())
   .then((productsData) => {
     products = productsData;
-    renderProducts();
     console.log(products);
+    renderProducts(products);
   });
 
 const productsGallery = document.body.querySelector("section");
 const filterBtns = document.body.querySelectorAll("button");
 const searchInput = document.body.querySelector("#searchInput");
 const select = document.body.querySelector("select");
+const itemNumbers = document.body.querySelector("#itemNumbers");
 
 const resetProducts = () => (productsGallery.innerHTML = "");
 
-const renderProducts = () => {
-  products.forEach((singelProduct) => {
+const renderProducts = (productsList) => {
+  productsList.forEach((singelProduct) => {
     const div = document.createElement("div");
     const div2 = document.createElement("div");
     const image = document.createElement("img");
@@ -29,6 +30,7 @@ const renderProducts = () => {
     headline2.textContent = singelProduct.title;
     price.textContent = `$ ${singelProduct.price}`;
     addToCart.textContent = "Add to cart";
+    addToCart.setAttribute("onclick", "addNumber()");
     div2.setAttribute("class", "priceCart");
     div2.append(price, addToCart);
     div.append(image, headline2, div2);
@@ -37,32 +39,35 @@ const renderProducts = () => {
 };
 
 filterBtns[0].addEventListener("click", () => {
-  products = products.filter((product) => product.category === "electronics");
+  const electroPro = products.filter(
+    (product) => product.category === "electronics"
+  );
   resetProducts();
-  renderProducts();
+  renderProducts(electroPro);
 });
 
 filterBtns[1].addEventListener("click", () => {
-  products = products.filter((product) => product.category === "jewelery");
+  const jeweleryPro = products.filter(
+    (product) => product.category === "jewelery"
+  );
   resetProducts();
-  renderProducts();
+  renderProducts(jeweleryPro);
 });
 
 filterBtns[2].addEventListener("click", () => {
-  products = products.filter(
+  const menPro = products.filter(
     (product) => product.category === "men's clothing"
   );
-
   resetProducts();
-  renderProducts();
+  renderProducts(menPro);
 });
 
 filterBtns[3].addEventListener("click", () => {
-  products = products.filter(
+  const womanPro = products.filter(
     (product) => product.category === "women's clothing"
   );
   resetProducts();
-  renderProducts();
+  renderProducts(womanPro);
 });
 
 const searchProducts = () => {
@@ -83,4 +88,10 @@ const sortByPrice = () => {
     resetProducts();
     renderProducts();
   }
+};
+let number = 0;
+const addNumber = () => {
+  number++;
+  console.log(number);
+  itemNumbers.textContent = number;
 };

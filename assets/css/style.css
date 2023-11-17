@@ -15,6 +15,35 @@ h1 {
   color: yellowgreen;
   margin-bottom: 2rem;
 }
+.shoppingCart {
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  background-image: url(../images/9104152_shop_buy_basket_add\ to\ cart_trolley_icon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 5rem;
+  height: 5rem;
+}
+.shoppingCart > div {
+  position: relative;
+}
+.itemNumbers {
+  background-color: yellowgreen;
+  border: 2px solid beige;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  padding: 0.75rem 0.75rem;
+  text-align: center;
+  position: absolute;
+  color: white;
+  right: -0.5rem;
+  top: -0.75rem;
+  font-size: 1.25rem;
+}
+
 form {
   background-color: yellowgreen;
   padding: 3rem 0;
@@ -30,6 +59,7 @@ button {
 input,
 select {
   border: none;
+  margin: 0.25rem 0.25rem;
 }
 form div {
   margin-top: 2rem;
@@ -41,6 +71,10 @@ button {
   border: 1px solid white;
   background-color: yellowgreen;
   color: white;
+  margin: 0.25rem 0.25rem;
+}
+button:hover {
+  box-shadow: 0 0 0.5rem green;
 }
 section {
   display: grid;
@@ -55,9 +89,13 @@ section {
   background-color: white;
   padding: 4rem 3rem;
   align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
-img {
+.productCard:hover {
+  box-shadow: 0 0 1rem yellowgreen;
+  transform: scale(1.05);
+}
+.productCard img {
   width: 100%;
   object-fit: contain;
   height: 16rem;
@@ -79,5 +117,6 @@ h2 {
 }
 
 h3 {
+  font-size: 2rem;
   color: rgb(235, 138, 11);
 }
