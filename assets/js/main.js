@@ -71,22 +71,22 @@ filterBtns[3].addEventListener("click", () => {
 });
 
 const searchProducts = () => {
-  products = products.filter((product) =>
+  const searchProduct = products.filter((product) =>
     product.title.toLowerCase().includes(searchInput.value.toLowerCase())
   );
   resetProducts();
-  renderProducts();
+  renderProducts(searchProduct);
 };
 
 const sortByPrice = () => {
   if (select.value === "lowToHigh") {
     products.sort((product1, product2) => product1.price - product2.price);
     resetProducts();
-    renderProducts();
+    renderProducts(products);
   } else if (select.value === "highToLow") {
     products.sort((product1, product2) => product2.price - product1.price);
     resetProducts();
-    renderProducts();
+    renderProducts(products);
   }
 };
 let number = 0;
